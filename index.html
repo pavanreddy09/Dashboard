@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <script src="https://kit.fontawesome.com/b9476ac86f.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+<header>
+    <nav>
+        <h1>All Orders <span id="len"></span></h1>
+    </nav>
+</header>
+<section>
+    <div class="searchfilter">
+        <div class="searchinput">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="search" placeholder="Search by customer..." id="search">
+        </div>
+
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn"><i class="fa-solid fa-arrow-down-wide-short" style="margin-right: 5px;"></i>Filter</button>
+            <div id="myDropdown" class="dropdown-content">
+                <button class="dropdown-btn">Sort by Date
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-container">
+                    <button onclick="datelatest()">Date latest</button>
+                    <button onclick="dateearliest()">Date Earliest</button>
+                </div>
+                <button class="dropdown-btn">Filter by Status
+                <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-container filter-data">
+                    <button>Completed</button>
+                    <button>Delivered</button>
+                    <button>Prepared</button>
+                    <button>Prepone</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="table-content">
+        <table>
+            <tr class="tablehead">
+                <th>ORDER ID<i class="fa-solid fa-caret-down" onclick="sortbyorderid()" data-name='asc' id="icon"></i></th>
+                <th>CUSTOMER<i class="fa-solid fa-caret-up" onclick="sortbycustomer()" data-name='asc' id="iconcum"></i></th>
+                <th>ADDRESS</th>
+                <th>PRODUCT</th>
+                <th>Date Order</th>
+                <th>STATUS</th>
+            </tr>
+            <tbody id=mytable>
+                <!-- table content loads here -->
+            </tbody>
+        </table>
+    </div>
+</section>
+    <script src="script.js"></script>
+</body>
+</html>
